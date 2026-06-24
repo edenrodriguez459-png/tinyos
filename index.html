@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TinyOS Mobile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="os-container">
+        <div class="header">
+            <h2>🐐 TinyOS Mobile v11.0</h2>
+            <p>In Loving Memory of Tiny</p>
+        </div>
+        <div class="console-box">
+            <div id="console-output">
+[TinyOS App Core Active]
+Modules Armed: GYM, STEPS, CALORIES, CHORES, TRACKERS
+Status: Dusty, Boris, Boss, Gimpy... UNBREAKABLE.
+            </div>
+        </div>
+        <div class="timer-card">
+            <span id="timer-display">RUN TIMER: 00:00</span>
+            <div class="timer-controls">
+                <button id="timer-toggle-btn" class="btn green" onclick="toggleTimer()">START RUN</button>
+                <button class="btn gray" onclick="resetTimer()">RESET</button>
+            </div>
+        </div>
+        <div class="card">
+            <h3>🌾 DAILY HERD PROTOCOLS</h3>
+            <div class="chore-item">
+                <input type="checkbox" id="chore1" onchange="saveChores()">
+                <label for="chore1">Feed the Herd (Hay & Grain)</label>
+            </div>
+            <div class="chore-item">
+                <input type="checkbox" id="chore2" onchange="saveChores()">
+                <label for="chore2">Water Check (Scrub & Refill)</label>
+            </div>
+            <div class="chore-item">
+                <input type="checkbox" id="chore3" onchange="saveChores()">
+                <label for="chore3">Check Their Lips (Health Scan)</label>
+            </div>
+        </div>
+        <div class="input-hub">
+            <input type="text" id="input1" placeholder="Exercise / Food Item / Dusty Note">
+            <input type="text" id="input2" placeholder="Weight & Reps / Calories / Shyness Level">
+            <input type="text" id="input3" placeholder="Rage Fuel Note / Extra Progress Detail">
+        </div>
+        <div class="action-grid">
+            <button class="btn red" onclick="logGym()">LOG LIFT</button>
+            <button class="btn purple" onclick="logCalories()">LOG CALS</button>
+            <button class="btn lightblue" onclick="logDusty()">LOG DUSTY</button>
+            <button class="btn cyan" onclick="addSteps()">+1000 STEPS</button>
+        </div>
+        <div class="card">
+            <h3>🎵 BROADCAST RADIO TRANSMITTER</h3>
+            <div class="radio-buttons">
+                <button class="btn dark" onclick="launchRadio('https://nightride.fm')">SYNTHWAVE</button>
+                <button class="btn dark" onclick="launchRadio('https://rockradio.com')">HARD ROCK</button>
+            </div>
+        </div>
+        <div class="nav-dock">
+            <button onclick="viewHistory('gym')">View Lifts</button>
+            <button onclick="viewHistory('calories')">View Food</button>
+            <button onclick="viewHistory('dusty')">View Herd</button>
+            <button onclick="viewHistory('steps')">View Steps</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
