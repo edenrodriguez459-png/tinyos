@@ -4,7 +4,26 @@ let totalSteps = parseInt(localStorage.getItem('tiny_steps')) || 0;
 
 window.onload = function() {
     loadChores();
+    addSoundCloudButton();
 };
+
+function addSoundCloudButton() {
+    if (document.getElementById('sc-btn')) return;
+    const radioSection = document.querySelector('.radio-buttons');
+    if (radioSection) {
+        const scBtn = document.createElement('button');
+        scBtn.id = 'sc-btn';
+        scBtn.className = 'btn dark';
+        scBtn.style.background = '#ff5500'; 
+        scBtn.style.flex = '1';
+        scBtn.innerText = 'JUICE WRLD (SC)';
+        scBtn.onclick = function() {
+            window.open('https://soundcloud.com', '_blank');
+        };
+        radioSection.appendChild(scBtn);
+    }
+}
+
 
 function logToConsole(text) {
     const out = document.getElementById('console-output');
